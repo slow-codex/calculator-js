@@ -1,0 +1,226 @@
+/* Importing Font */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+/* Font settings */
+*{
+    font-family: 'Spartan', sans-serif;
+}
+
+/* Cores */
+:root{
+    --background          : #3a4764;
+    --background-dark     : #232c43;
+    --background-very-dark: #182034;
+
+
+    --key-color-top       : #ffffff;
+    --key-color-bottom    : #3a4764;
+    --key-background      : #eae3dc;
+    --key-background-dark : #dfd9d2;
+    --key-shadow          : #b4a597;
+
+    --key-blue-background : #637097;
+    --key-blue-shadow     : #404e72;
+
+    --key-red-background  : #d03f2f;
+    --key-red-shadow      : #93261a;
+
+    --transition: 1s;
+}
+
+/* Background settings */
+.calc{
+    background-color: var(--background);
+    width: 100vw;
+    height: 100vh;
+    transition: var(--transition);
+}
+.calc-content{  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Top of the calculator */
+.calc-top h3{
+    color: var(--key-color-top);
+    transition: var(--transition);
+}
+
+.calc-top h4{
+    color: var(--key-color-top);
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5px;
+    transition: var(--transition);
+}
+.calc-top span{
+    color: var(--key-color-top);
+    font-size: 13px;
+    transition: var(--transition);
+}
+.calc-top-result input{
+    background-color: var(--background-very-dark); 
+    color: var(--key-color-top);
+    border: none;
+    margin-bottom: 20px;
+    text-align: right;
+    padding: 17px;
+    font-size: 32px;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+/* Keys or Bottons */
+.calc-keys{
+    background-color: var(--background-dark);
+    border-radius: 10px;
+    padding: 10px;
+    transition: var(--transition);
+}
+.calc-keys input{
+    background-color: var(--key-background);
+    color: var(--key-color-bottom);
+    border: 2px solid var(--key-background);
+    border-radius: 5px;
+    box-shadow: 1px 1.5px 1px var(--key-shadow);
+    margin: 10px;
+    height: 35px;
+    transition: var(--transition);
+}
+#reset, #del{
+    background-color: var(--key-blue-background);
+    color: #FFF;
+    box-shadow: 1px 1.5px 1px var(--key-blue-shadow);
+    border: 2px solid var(--key-blue-background);
+    transition: var(--transition);
+}
+#del{
+    font-size: 13px;
+    padding: 0 3%;
+}
+#equals{
+    background-color: var(--key-red-background);
+    color: var(--key-background);
+    box-shadow: 1px 1.5px 1px var(--key-red-shadow);
+    border: 2px solid var(--key-red-background);
+    transition: var(--transition);
+}
+
+/* Keys hover animations */
+.calc-keys input:hover{
+    border: 2px solid var(--key-background);
+    color: var(--key-color-top);
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+#reset:hover, #del:hover{
+    border: 2px solid var(--key-blue-background);
+    color: var(--key-blue-background);
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+#equals:hover{
+    border: 2px solid var(--key-red-background);
+    color: var(--key-red-background);
+    background-color: hsla(0, 0%, 100%, 0);
+    transition: 0.5s;
+}
+
+/* Keys activated */
+.calc-keys input:active{
+    box-shadow: 3px 3px 3px var(--key-shadow);
+    background-color: var(--key-background);
+    color: var(--background);
+}
+#reset:active, #del:active{
+    box-shadow: 3px 3px 3px var(--key-blue-shadow);
+    background-color: var(--key-blue-background);
+    color: var(--key-background);
+}
+#equals:active{
+    box-shadow: 3px 3px 3px var(--key-red-shadow);
+    background-color: var(--key-red-background);
+    color: var(--key-background);
+}
+
+/* Toggle theme button */
+/* Basics configs for styling input type range */
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+}
+  
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+  
+input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+  
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+  
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+}
+
+/* Styling Thumb for diferents browsers */
+/* thumb = circle on the range */
+
+/* WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: var(--key-red-background);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px var(--key-red-shadow);
+    transition: var(--transition);
+}
+/* Firefox */
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: var(--key-red-background);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px var(--key-red-shadow);
+}
+  
+  /* IE */
+input[type=range]::-ms-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 20px;
+    background: var(--key-red-background);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px var(--key-red-shadow);
+}
+/* Style for background */
+.toggle{
+    background-color: var(--background-dark);
+    border-radius: 25px;
+    height: 25px;
+    padding: 0 6px !important;
+    transition: var(--transition);
+}
+/* This make user can click and drag the button */
+.toggle input{
+    width: 100%;
+}
+
+/* ======================= Theme 2 ======================= */
